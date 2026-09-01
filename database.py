@@ -1,8 +1,9 @@
 from sqlite3 import connect
 
-def get_db_connection():
-    try:
-        conn = connect('database.db')
-        return True
-    except:
-        get_db_connection()
+class database:
+    def __init__():
+        try:
+            conn = connect('database.db')
+            return True
+        except:
+            self.__init__()

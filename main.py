@@ -1,11 +1,11 @@
-from database import get_db_connection
+from database import database
 from fastapi import FastAPI
 
 app = FastAPI()
 
 @app.get("/")
 def main():
-    if get_db_connection():
+    if database:
         return "Database connection successful"
     else:
         return "Database connection failed,retrying..."
