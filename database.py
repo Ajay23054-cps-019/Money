@@ -20,6 +20,13 @@ class database:
         ''')
         self.conn.commit()
 
+    def insert_transaction(self, username: str, name: str, value: str):
+        self.conn.execute(
+            "INSERT INTO data (username, name, value) VALUES (?, ?, ?)",
+            (username, name, value)
+        )
+        self.conn.commit()
+
     def __del__(self):
         if getattr(self, "conn", None):
             self.conn.close()
