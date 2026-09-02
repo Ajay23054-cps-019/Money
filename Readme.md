@@ -28,13 +28,13 @@ A lightweight **Money Usage Management App** built with **FastAPI** and **SQLite
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/<username>/Ganesh.git
    cd Ganesh
    ```
 
 2. Install dependencies:
    ```bash
-   pip install fastapi uvicorn
+   pip install fastapi uvicorn sqlite3
    ```
 
 ---
