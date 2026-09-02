@@ -1,14 +1,12 @@
 from sqlite3 import connect
 
 class database:
-    def __init__():
+    def __init__(self):
         try:
-            conn = connect('database.db')
-            self.conn = conn
+            self.conn = connect('database.db')
             self.add_data()
-            return True
-        except:
-            self.__init__()
+        except Exception:
+            self.conn = None
 
     def add_data(self):
         self.conn.execute('''
@@ -23,4 +21,5 @@ class database:
         self.conn.commit()
 
     def __del__(self):
-        conn.close()
+        if getattr(self, "conn", None):
+            self.conn.close()
